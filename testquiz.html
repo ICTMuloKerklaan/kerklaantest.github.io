@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .question {
+      margin-bottom: 20px;
+    }
+    
+    .question p {
+      font-weight: bold;
+    }
+    
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Quiz</h1>
+  <form id="quiz-form">
+    <div class="question">
+      <p>Question 1: What is the capital city of France?</p>
+      <label>
+        <input type="radio" name="q1" value="a"> a) London
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="b"> b) Paris
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="c"> c) Rome
+      </label><br>
+      <label>
+        <input type="radio" name="q1" value="d"> d) Madrid
+      </label>
+    </div>
+    
+    <div class="question">
+      <p>Question 2: Who painted the Mona Lisa?</p>
+      <label>
+        <input type="radio" name="q2" value="a"> a) Leonardo da Vinci
+      </label><br>
+      <label>
+        <input type="radio" name="q2" value="b"> b) Pablo Picasso
+      </label><br>
+      <label>
+        <input type="radio" name="q2" value="c"> c) Vincent van Gogh
+      </label><br>
+      <label>
+        <input type="radio" name="q2" value="d"> d) Michelangelo
+      </label>
+    </div>
+    
+    <button class="submit-btn" type="button" onclick="submitQuiz()">Submit</button>
+  </form>
+  
+  <script>
+    function submitQuiz() {
+      var form = document.getElementById('quiz-form');
+      var answers = form.elements;
+      var correctAnswers = 0;
+      
+      if (answers.q1.value === 'b') {
+        correctAnswers++;
+      }
+      
+      if (answers.q2.value === 'a') {
+        correctAnswers++;
+      }
+      
+      var resultMessage = "You got " + correctAnswers + " out of 2 correct!";
+      alert(resultMessage);
+    }
+  </script>
+</body>
+</html>
